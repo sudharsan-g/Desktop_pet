@@ -8,12 +8,13 @@
             margin: 0;
             height: 100vh;
             background: transparent;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            overflow: hidden;
         }
 
         #pet {
+            position: absolute;
+            left: 0;
+            bottom: 0;
             width: 100px;
             height: 100px;
             background: #ff8a3d;
@@ -24,6 +25,7 @@
 
 <body>
     <div id="pet"></div>
+    <script src="pet.js"></script>
 </body>
 
 </html>
