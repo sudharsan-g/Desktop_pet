@@ -1,0 +1,24 @@
+{
+  "name": "Blob",
+  "width": 140,
+  "height": 140,
+  "clickState": "happy",
+  "animations": {
+    "idle": { "sheet": "idle.png", "frames": 4, "fps": 3 },
+    "walking": { "sheet": "walking.png", "frames": 6, "fps": 12 },
+    "hovered": { "sheet": "hovered.png", "frames": 4, "fps": 6 },
+    "held": { "sheet": "held.png", "frames": 4, "fps": 16 },
+    "happy": { "sheet": "happy.png", "frames": 6, "fps": 10, "seconds": 2 },
+    "drinking": { "sheet": "drinking.png", "frames": 6, "fps": 6, "seconds": 6 }
+  },
+  "errands": [
+    { "state": "drinking", "everyMinutes": 45, "walkTo": 0.5 }
+  ],
+  "speech": {
+    "walking": ["Finally, freedom.", "I was busy anyway.", "Don't touch me again."],
+    "hovered": ["What do you want?", "Stop staring.", "Personal space, please."],
+    "held": ["PUT ME DOWN!", "Where are we going?!", "This is kidnapping!"],
+    "happy": ["Fine. That was nice.", "Do that again.", "Tell no one."],
+    "drinking": ["Water break. You too.", "Drink some water, I'm watching.", "I drink, you drink."]
+  }
+}

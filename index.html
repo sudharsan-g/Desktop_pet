@@ -14,16 +14,136 @@
         #pet {
             position: absolute;
             left: 0;
-            width: 100px;
-            height: 100px;
-            background: #ff8a3d;
-            border-radius: 30px;
+            top: 0;
+        }
+
+        #sprite {
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+        }
+
+        #bubble {
+            position: absolute;
+            left: 0;
+            top: 0;
+            padding: 8px 12px;
+            max-width: 220px;
+            background: white;
+            color: #22252a;
+            border: 2px solid #22252a;
+            border-radius: 12px;
+            font: 14px sans-serif;
+            pointer-events: none;
+            visibility: hidden;
+        }
+
+        #bubble.show {
+            visibility: visible;
+        }
+
+        #controls {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: row;
+            gap: 8px;
+        }
+
+        #controls button {
+            width: 44px;
+            height: 44px;
+            border: 2px solid #22252a;
+            border-radius: 50%;
+            background: white;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        #mic-button.listening {
+            background: #ff6b6b;
+        }
+
+        #chat-panel {
+            position: absolute;
+            bottom: 0;
+            right: 100%;
+            margin: 0 8px;
+            width: 300px;
+            height: 340px;
+            box-sizing: border-box;
+            padding: 10px;
+            background: white;
+            color: #22252a;
+            border: 2px solid #22252a;
+            border-radius: 12px;
+            font: 14px sans-serif;
+            display: none;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        #chat-panel.open {
+            display: flex;
+        }
+
+        #chat-panel.on-right {
+            right: auto;
+            left: 100%;
+        }
+
+        #chat-log {
+            flex: 1;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .message {
+            max-width: 85%;
+            padding: 6px 10px;
+            border-radius: 10px;
+            background: #eceff2;
+            align-self: flex-start;
+            white-space: pre-wrap;
+        }
+
+        .message.you {
+            background: #ffd9bf;
+            align-self: flex-end;
+        }
+
+        #chat-input {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 8px;
+            border: 2px solid #22252a;
+            border-radius: 8px;
+            font: inherit;
         }
     </style>
 </head>
 
 <body>
-    <div id="pet"></div>
+    <div id="pet">
+        <div id="sprite"></div>
+        <div id="controls">
+            <button id="chat-button" title="Chat">💬</button>
+            <button id="mic-button" title="Hold to speak">🎤</button>
+        </div>
+        <div id="chat-panel">
+            <div id="chat-log"></div>
+            <form id="chat-form">
+                <input id="chat-input" placeholder="Say something..." autocomplete="off" />
+            </form>
+        </div>
+
+    </div>
+    <div id="bubble">
+    </div>
     <script src="pet.js"></script>
 </body>
 
